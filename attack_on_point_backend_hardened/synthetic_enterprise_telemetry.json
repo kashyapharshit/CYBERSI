@@ -1,0 +1,1701 @@
+{
+  "metadata": {
+    "organization": "Suryoday NeoBank Ltd (Synthetic)",
+    "currency": "INR",
+    "total_assets": 23,
+    "generated_at": "2026-09-10T12:00:00Z"
+  },
+  "enterprise_budget_constraint_inr": 2000000,
+  "available_remediations_catalog": [
+    {
+      "id": "REM-MFA-01",
+      "title": "Hardware Token Enforced MFA",
+      "cost_inr": 90000,
+      "effectiveness": 0.85,
+      "framework": "NIST AC-6 / RBI Section 4"
+    },
+    {
+      "id": "REM-EDR-02",
+      "title": "Enterprise Next-Gen EDR Deployment",
+      "cost_inr": 160000,
+      "effectiveness": 0.78,
+      "framework": "CIS Control 10 / SEBI"
+    },
+    {
+      "id": "REM-WAF-03",
+      "title": "Cloud WAF & DDoS Shield Integration",
+      "cost_inr": 130000,
+      "effectiveness": 0.7,
+      "framework": "ISO 27001 A.13"
+    },
+    {
+      "id": "REM-PATCH-04",
+      "title": "Automated Critical Vulnerability Patching SLA (48h)",
+      "cost_inr": 70000,
+      "effectiveness": 0.9,
+      "framework": "CIS Control 7 / NIST PR.IP"
+    },
+    {
+      "id": "REM-SEG-05",
+      "title": "Microsegmentation & Zero Trust Network Access",
+      "cost_inr": 220000,
+      "effectiveness": 0.82,
+      "framework": "NIST SP 800-207 / RBI"
+    }
+  ],
+  "assets": [
+    {
+      "asset_id": "AST-20001",
+      "hostname": "net-banking-customer-portal-001",
+      "ip_address": "10.2.83.243",
+      "asset_type": "Net Banking / Customer Portal",
+      "tier": 2,
+      "is_internet_facing": true,
+      "data_classification": "Public / Transient PII",
+      "hourly_downtime_cost_inr": 10471,
+      "stored_records_count": 27875,
+      "cost_per_breached_record_inr": 300,
+      "active_controls": [
+        "Central Syslog Forwarder",
+        "Daily Snapshot Backup",
+        "Antivirus Signature Agent",
+        "Network Firewall",
+        "Active Directory Auth"
+      ],
+      "applicable_frameworks": [
+        "NIST CSF",
+        "ISO 27001"
+      ],
+      "vulnerabilities": [
+        {
+          "vuln_id": "VULN-AST-20001-1",
+          "cve_id": "CVE-2023-46747",
+          "name": "F5 BIG-IP Config Utility RCE",
+          "cvss_score": 9.8,
+          "epss_score": 0.91,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 142,
+          "remediation_options": [
+            {
+              "id": "REM-WAF-03",
+              "title": "Cloud WAF & DDoS Shield Integration",
+              "cost_inr": 130000,
+              "effectiveness": 0.7,
+              "framework": "ISO 27001 A.13"
+            }
+          ]
+        },
+        {
+          "vuln_id": "VULN-AST-20001-2",
+          "cve_id": "CVE-2023-27997",
+          "name": "FortiOS SSL-VPN Heap Overflow",
+          "cvss_score": 9.2,
+          "epss_score": 0.76,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 19,
+          "remediation_options": [
+            {
+              "id": "REM-MFA-01",
+              "title": "Hardware Token Enforced MFA",
+              "cost_inr": 90000,
+              "effectiveness": 0.85,
+              "framework": "NIST AC-6 / RBI Section 4"
+            }
+          ]
+        },
+        {
+          "vuln_id": "VULN-AST-20001-3",
+          "cve_id": "CVE-2021-44228",
+          "name": "Log4Shell (RCE)",
+          "cvss_score": 10.0,
+          "epss_score": 0.975,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 116,
+          "remediation_options": [
+            {
+              "id": "REM-WAF-03",
+              "title": "Cloud WAF & DDoS Shield Integration",
+              "cost_inr": 130000,
+              "effectiveness": 0.7,
+              "framework": "ISO 27001 A.13"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "AST-20002",
+      "hostname": "net-banking-customer-portal-002",
+      "ip_address": "10.2.212.145",
+      "asset_type": "Net Banking / Customer Portal",
+      "tier": 2,
+      "is_internet_facing": true,
+      "data_classification": "Public / Transient PII",
+      "hourly_downtime_cost_inr": 10028,
+      "stored_records_count": 16630,
+      "cost_per_breached_record_inr": 300,
+      "active_controls": [
+        "Central Syslog Forwarder",
+        "Daily Snapshot Backup",
+        "Network Firewall"
+      ],
+      "applicable_frameworks": [
+        "NIST CSF",
+        "ISO 27001"
+      ],
+      "vulnerabilities": [
+        {
+          "vuln_id": "VULN-AST-20002-1",
+          "cve_id": "CVE-2023-34362",
+          "name": "MOVEit Transfer SQLi",
+          "cvss_score": 9.8,
+          "epss_score": 0.942,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 61,
+          "remediation_options": [
+            {
+              "id": "REM-EDR-02",
+              "title": "Enterprise Next-Gen EDR Deployment",
+              "cost_inr": 160000,
+              "effectiveness": 0.78,
+              "framework": "CIS Control 10 / SEBI"
+            }
+          ]
+        },
+        {
+          "vuln_id": "VULN-AST-20002-2",
+          "cve_id": "CVE-2024-21887",
+          "name": "Ivanti Connect Secure Command Injection",
+          "cvss_score": 9.1,
+          "epss_score": 0.884,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 112,
+          "remediation_options": [
+            {
+              "id": "REM-PATCH-04",
+              "title": "Automated Critical Vulnerability Patching SLA (48h)",
+              "cost_inr": 70000,
+              "effectiveness": 0.9,
+              "framework": "CIS Control 7 / NIST PR.IP"
+            }
+          ]
+        },
+        {
+          "vuln_id": "VULN-AST-20002-3",
+          "cve_id": "CVE-2023-27997",
+          "name": "FortiOS SSL-VPN Heap Overflow",
+          "cvss_score": 9.2,
+          "epss_score": 0.76,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 83,
+          "remediation_options": [
+            {
+              "id": "REM-WAF-03",
+              "title": "Cloud WAF & DDoS Shield Integration",
+              "cost_inr": 130000,
+              "effectiveness": 0.7,
+              "framework": "ISO 27001 A.13"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "AST-20003",
+      "hostname": "net-banking-customer-portal-003",
+      "ip_address": "10.2.25.141",
+      "asset_type": "Net Banking / Customer Portal",
+      "tier": 2,
+      "is_internet_facing": true,
+      "data_classification": "Public / Transient PII",
+      "hourly_downtime_cost_inr": 19667,
+      "stored_records_count": 6114,
+      "cost_per_breached_record_inr": 300,
+      "active_controls": [
+        "Central Syslog Forwarder",
+        "Active Directory Auth",
+        "Network Firewall"
+      ],
+      "applicable_frameworks": [
+        "NIST CSF",
+        "ISO 27001"
+      ],
+      "vulnerabilities": [
+        {
+          "vuln_id": "VULN-AST-20003-1",
+          "cve_id": "CVE-2023-38606",
+          "name": "Apple Kernel Memory Manipulation",
+          "cvss_score": 7.0,
+          "epss_score": 0.085,
+          "cisa_kev": false,
+          "attack_vector": "LOCAL",
+          "patch_age_days": 179,
+          "remediation_options": [
+            {
+              "id": "REM-PATCH-04",
+              "title": "Automated Critical Vulnerability Patching SLA (48h)",
+              "cost_inr": 70000,
+              "effectiveness": 0.9,
+              "framework": "CIS Control 7 / NIST PR.IP"
+            }
+          ]
+        },
+        {
+          "vuln_id": "VULN-AST-20003-2",
+          "cve_id": "CVE-2023-27997",
+          "name": "FortiOS SSL-VPN Heap Overflow",
+          "cvss_score": 9.2,
+          "epss_score": 0.76,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 121,
+          "remediation_options": [
+            {
+              "id": "REM-MFA-01",
+              "title": "Hardware Token Enforced MFA",
+              "cost_inr": 90000,
+              "effectiveness": 0.85,
+              "framework": "NIST AC-6 / RBI Section 4"
+            },
+            {
+              "id": "REM-PATCH-04",
+              "title": "Automated Critical Vulnerability Patching SLA (48h)",
+              "cost_inr": 70000,
+              "effectiveness": 0.9,
+              "framework": "CIS Control 7 / NIST PR.IP"
+            }
+          ]
+        },
+        {
+          "vuln_id": "VULN-AST-20003-3",
+          "cve_id": "CVE-2022-1388",
+          "name": "F5 BIG-IP iControl REST Auth Bypass",
+          "cvss_score": 9.8,
+          "epss_score": 0.5,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 51,
+          "remediation_options": [
+            {
+              "id": "REM-MFA-01",
+              "title": "Hardware Token Enforced MFA",
+              "cost_inr": 90000,
+              "effectiveness": 0.85,
+              "framework": "NIST AC-6 / RBI Section 4"
+            },
+            {
+              "id": "REM-WAF-03",
+              "title": "Cloud WAF & DDoS Shield Integration",
+              "cost_inr": 130000,
+              "effectiveness": 0.7,
+              "framework": "ISO 27001 A.13"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "AST-20004",
+      "hostname": "net-banking-customer-portal-004",
+      "ip_address": "10.2.127.225",
+      "asset_type": "Net Banking / Customer Portal",
+      "tier": 2,
+      "is_internet_facing": true,
+      "data_classification": "Public / Transient PII",
+      "hourly_downtime_cost_inr": 13627,
+      "stored_records_count": 31414,
+      "cost_per_breached_record_inr": 300,
+      "active_controls": [
+        "Central Syslog Forwarder",
+        "Antivirus Signature Agent",
+        "Active Directory Auth",
+        "Daily Snapshot Backup",
+        "Network Firewall"
+      ],
+      "applicable_frameworks": [
+        "NIST CSF",
+        "ISO 27001"
+      ],
+      "vulnerabilities": [
+        {
+          "vuln_id": "VULN-AST-20004-1",
+          "cve_id": "CVE-2024-3400",
+          "name": "PAN-OS GlobalProtect Command Injection",
+          "cvss_score": 10.0,
+          "epss_score": 0.95,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 112,
+          "remediation_options": [
+            {
+              "id": "REM-WAF-03",
+              "title": "Cloud WAF & DDoS Shield Integration",
+              "cost_inr": 130000,
+              "effectiveness": 0.7,
+              "framework": "ISO 27001 A.13"
+            }
+          ]
+        },
+        {
+          "vuln_id": "VULN-AST-20004-2",
+          "cve_id": "CVE-2023-4966",
+          "name": "Citrix Bleed Session Hijack",
+          "cvss_score": 9.4,
+          "epss_score": 0.912,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 130,
+          "remediation_options": [
+            {
+              "id": "REM-MFA-01",
+              "title": "Hardware Token Enforced MFA",
+              "cost_inr": 90000,
+              "effectiveness": 0.85,
+              "framework": "NIST AC-6 / RBI Section 4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "AST-20005",
+      "hostname": "net-banking-customer-portal-005",
+      "ip_address": "10.2.178.90",
+      "asset_type": "Net Banking / Customer Portal",
+      "tier": 2,
+      "is_internet_facing": true,
+      "data_classification": "Public / Transient PII",
+      "hourly_downtime_cost_inr": 17738,
+      "stored_records_count": 34550,
+      "cost_per_breached_record_inr": 300,
+      "active_controls": [
+        "Central Syslog Forwarder",
+        "Network Firewall",
+        "Daily Snapshot Backup",
+        "Antivirus Signature Agent"
+      ],
+      "applicable_frameworks": [
+        "NIST CSF",
+        "ISO 27001"
+      ],
+      "vulnerabilities": [
+        {
+          "vuln_id": "VULN-AST-20005-1",
+          "cve_id": "CVE-2024-21887",
+          "name": "Ivanti Connect Secure Command Injection",
+          "cvss_score": 9.1,
+          "epss_score": 0.884,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 126,
+          "remediation_options": [
+            {
+              "id": "REM-WAF-03",
+              "title": "Cloud WAF & DDoS Shield Integration",
+              "cost_inr": 130000,
+              "effectiveness": 0.7,
+              "framework": "ISO 27001 A.13"
+            },
+            {
+              "id": "REM-EDR-02",
+              "title": "Enterprise Next-Gen EDR Deployment",
+              "cost_inr": 160000,
+              "effectiveness": 0.78,
+              "framework": "CIS Control 10 / SEBI"
+            }
+          ]
+        },
+        {
+          "vuln_id": "VULN-AST-20005-2",
+          "cve_id": "CVE-2020-1472",
+          "name": "Zerologon Domain Controller Takeover",
+          "cvss_score": 10.0,
+          "epss_score": 0.6,
+          "cisa_kev": true,
+          "attack_vector": "ADJACENT",
+          "patch_age_days": 84,
+          "remediation_options": [
+            {
+              "id": "REM-WAF-03",
+              "title": "Cloud WAF & DDoS Shield Integration",
+              "cost_inr": 130000,
+              "effectiveness": 0.7,
+              "framework": "ISO 27001 A.13"
+            }
+          ]
+        },
+        {
+          "vuln_id": "VULN-AST-20005-3",
+          "cve_id": "CVE-2022-30190",
+          "name": "Follina MSDT Remote Execution",
+          "cvss_score": 7.8,
+          "epss_score": 0.431,
+          "cisa_kev": true,
+          "attack_vector": "LOCAL",
+          "patch_age_days": 176,
+          "remediation_options": [
+            {
+              "id": "REM-MFA-01",
+              "title": "Hardware Token Enforced MFA",
+              "cost_inr": 90000,
+              "effectiveness": 0.85,
+              "framework": "NIST AC-6 / RBI Section 4"
+            },
+            {
+              "id": "REM-EDR-02",
+              "title": "Enterprise Next-Gen EDR Deployment",
+              "cost_inr": 160000,
+              "effectiveness": 0.78,
+              "framework": "CIS Control 10 / SEBI"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "AST-10001",
+      "hostname": "customer-kyc-pii-database-001",
+      "ip_address": "10.1.157.30",
+      "asset_type": "Customer KYC / PII Database Cluster",
+      "tier": 1,
+      "is_internet_facing": false,
+      "data_classification": "Restricted / PII",
+      "hourly_downtime_cost_inr": 31177,
+      "stored_records_count": 80909,
+      "cost_per_breached_record_inr": 550,
+      "active_controls": [
+        "Central Syslog Forwarder",
+        "Daily Snapshot Backup",
+        "Network Firewall",
+        "Active Directory Auth",
+        "Antivirus Signature Agent"
+      ],
+      "applicable_frameworks": [
+        "DPDP Act",
+        "ISO 27001",
+        "SEBI Cyber Framework"
+      ],
+      "vulnerabilities": [
+        {
+          "vuln_id": "VULN-AST-10001-1",
+          "cve_id": "CVE-2022-30190",
+          "name": "Follina MSDT Remote Execution",
+          "cvss_score": 7.8,
+          "epss_score": 0.431,
+          "cisa_kev": true,
+          "attack_vector": "LOCAL",
+          "patch_age_days": 105,
+          "remediation_options": [
+            {
+              "id": "REM-MFA-01",
+              "title": "Hardware Token Enforced MFA",
+              "cost_inr": 90000,
+              "effectiveness": 0.85,
+              "framework": "NIST AC-6 / RBI Section 4"
+            },
+            {
+              "id": "REM-PATCH-04",
+              "title": "Automated Critical Vulnerability Patching SLA (48h)",
+              "cost_inr": 70000,
+              "effectiveness": 0.9,
+              "framework": "CIS Control 7 / NIST PR.IP"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "AST-10002",
+      "hostname": "customer-kyc-pii-database-002",
+      "ip_address": "10.1.227.36",
+      "asset_type": "Customer KYC / PII Database Cluster",
+      "tier": 1,
+      "is_internet_facing": false,
+      "data_classification": "Restricted / PII",
+      "hourly_downtime_cost_inr": 29107,
+      "stored_records_count": 338473,
+      "cost_per_breached_record_inr": 550,
+      "active_controls": [
+        "Central Syslog Forwarder",
+        "Network Firewall",
+        "Active Directory Auth"
+      ],
+      "applicable_frameworks": [
+        "DPDP Act",
+        "ISO 27001",
+        "SEBI Cyber Framework"
+      ],
+      "vulnerabilities": [
+        {
+          "vuln_id": "VULN-AST-10002-1",
+          "cve_id": "CVE-2024-3094",
+          "name": "XZ Utils Backdoor",
+          "cvss_score": 10.0,
+          "epss_score": 0.865,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 43,
+          "remediation_options": [
+            {
+              "id": "REM-SEG-05",
+              "title": "Microsegmentation & Zero Trust Network Access",
+              "cost_inr": 220000,
+              "effectiveness": 0.82,
+              "framework": "NIST SP 800-207 / RBI"
+            },
+            {
+              "id": "REM-PATCH-04",
+              "title": "Automated Critical Vulnerability Patching SLA (48h)",
+              "cost_inr": 70000,
+              "effectiveness": 0.9,
+              "framework": "CIS Control 7 / NIST PR.IP"
+            }
+          ]
+        },
+        {
+          "vuln_id": "VULN-AST-10002-2",
+          "cve_id": "CVE-2023-4966",
+          "name": "Citrix Bleed Session Hijack",
+          "cvss_score": 9.4,
+          "epss_score": 0.912,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 64,
+          "remediation_options": [
+            {
+              "id": "REM-MFA-01",
+              "title": "Hardware Token Enforced MFA",
+              "cost_inr": 90000,
+              "effectiveness": 0.85,
+              "framework": "NIST AC-6 / RBI Section 4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "AST-10003",
+      "hostname": "customer-kyc-pii-database-003",
+      "ip_address": "10.1.47.68",
+      "asset_type": "Customer KYC / PII Database Cluster",
+      "tier": 1,
+      "is_internet_facing": false,
+      "data_classification": "Restricted / PII",
+      "hourly_downtime_cost_inr": 24238,
+      "stored_records_count": 52146,
+      "cost_per_breached_record_inr": 550,
+      "active_controls": [
+        "Daily Snapshot Backup",
+        "Central Syslog Forwarder",
+        "Antivirus Signature Agent",
+        "Active Directory Auth"
+      ],
+      "applicable_frameworks": [
+        "DPDP Act",
+        "ISO 27001",
+        "SEBI Cyber Framework"
+      ],
+      "vulnerabilities": [
+        {
+          "vuln_id": "VULN-AST-10003-1",
+          "cve_id": "CVE-2023-27997",
+          "name": "FortiOS SSL-VPN Heap Overflow",
+          "cvss_score": 9.2,
+          "epss_score": 0.76,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 149,
+          "remediation_options": [
+            {
+              "id": "REM-PATCH-04",
+              "title": "Automated Critical Vulnerability Patching SLA (48h)",
+              "cost_inr": 70000,
+              "effectiveness": 0.9,
+              "framework": "CIS Control 7 / NIST PR.IP"
+            },
+            {
+              "id": "REM-SEG-05",
+              "title": "Microsegmentation & Zero Trust Network Access",
+              "cost_inr": 220000,
+              "effectiveness": 0.82,
+              "framework": "NIST SP 800-207 / RBI"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "AST-10101",
+      "hostname": "core-banking-ledger-001",
+      "ip_address": "10.1.102.103",
+      "asset_type": "Core Banking / Payment Gateway",
+      "tier": 1,
+      "is_internet_facing": true,
+      "data_classification": "PCI-DSS / Financial",
+      "hourly_downtime_cost_inr": 50829,
+      "stored_records_count": 107141,
+      "cost_per_breached_record_inr": 650,
+      "active_controls": [
+        "Central Syslog Forwarder",
+        "Antivirus Signature Agent"
+      ],
+      "applicable_frameworks": [
+        "RBI CSCRF",
+        "PCI-DSS",
+        "ISO 27001",
+        "DPDP Act"
+      ],
+      "vulnerabilities": [
+        {
+          "vuln_id": "VULN-AST-10101-1",
+          "cve_id": "CVE-2021-44228",
+          "name": "Log4Shell (RCE)",
+          "cvss_score": 10.0,
+          "epss_score": 0.975,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 58,
+          "remediation_options": [
+            {
+              "id": "REM-WAF-03",
+              "title": "Cloud WAF & DDoS Shield Integration",
+              "cost_inr": 130000,
+              "effectiveness": 0.7,
+              "framework": "ISO 27001 A.13"
+            },
+            {
+              "id": "REM-MFA-01",
+              "title": "Hardware Token Enforced MFA",
+              "cost_inr": 90000,
+              "effectiveness": 0.85,
+              "framework": "NIST AC-6 / RBI Section 4"
+            }
+          ]
+        },
+        {
+          "vuln_id": "VULN-AST-10101-2",
+          "cve_id": "CVE-2023-23397",
+          "name": "Outlook NTLM Credential Theft",
+          "cvss_score": 9.8,
+          "epss_score": 0.725,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 158,
+          "remediation_options": [
+            {
+              "id": "REM-PATCH-04",
+              "title": "Automated Critical Vulnerability Patching SLA (48h)",
+              "cost_inr": 70000,
+              "effectiveness": 0.9,
+              "framework": "CIS Control 7 / NIST PR.IP"
+            },
+            {
+              "id": "REM-WAF-03",
+              "title": "Cloud WAF & DDoS Shield Integration",
+              "cost_inr": 130000,
+              "effectiveness": 0.7,
+              "framework": "ISO 27001 A.13"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "AST-10102",
+      "hostname": "upi-payments-gateway-002",
+      "ip_address": "10.1.146.39",
+      "asset_type": "Core Banking / Payment Gateway",
+      "tier": 1,
+      "is_internet_facing": true,
+      "data_classification": "PCI-DSS / Financial",
+      "hourly_downtime_cost_inr": 31649,
+      "stored_records_count": 175318,
+      "cost_per_breached_record_inr": 650,
+      "active_controls": [
+        "Network Firewall",
+        "Antivirus Signature Agent",
+        "Daily Snapshot Backup",
+        "Central Syslog Forwarder",
+        "Active Directory Auth"
+      ],
+      "applicable_frameworks": [
+        "RBI CSCRF",
+        "PCI-DSS",
+        "ISO 27001",
+        "DPDP Act"
+      ],
+      "vulnerabilities": [
+        {
+          "vuln_id": "VULN-AST-10102-1",
+          "cve_id": "CVE-2023-46747",
+          "name": "F5 BIG-IP Config Utility RCE",
+          "cvss_score": 9.8,
+          "epss_score": 0.91,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 58,
+          "remediation_options": [
+            {
+              "id": "REM-WAF-03",
+              "title": "Cloud WAF & DDoS Shield Integration",
+              "cost_inr": 130000,
+              "effectiveness": 0.7,
+              "framework": "ISO 27001 A.13"
+            }
+          ]
+        },
+        {
+          "vuln_id": "VULN-AST-10102-2",
+          "cve_id": "CVE-2024-21887",
+          "name": "Ivanti Connect Secure Command Injection",
+          "cvss_score": 9.1,
+          "epss_score": 0.884,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 93,
+          "remediation_options": [
+            {
+              "id": "REM-PATCH-04",
+              "title": "Automated Critical Vulnerability Patching SLA (48h)",
+              "cost_inr": 70000,
+              "effectiveness": 0.9,
+              "framework": "CIS Control 7 / NIST PR.IP"
+            },
+            {
+              "id": "REM-SEG-05",
+              "title": "Microsegmentation & Zero Trust Network Access",
+              "cost_inr": 220000,
+              "effectiveness": 0.82,
+              "framework": "NIST SP 800-207 / RBI"
+            }
+          ]
+        },
+        {
+          "vuln_id": "VULN-AST-10102-3",
+          "cve_id": "CVE-2021-44228",
+          "name": "Log4Shell (RCE)",
+          "cvss_score": 10.0,
+          "epss_score": 0.975,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 129,
+          "remediation_options": [
+            {
+              "id": "REM-MFA-01",
+              "title": "Hardware Token Enforced MFA",
+              "cost_inr": 90000,
+              "effectiveness": 0.85,
+              "framework": "NIST AC-6 / RBI Section 4"
+            },
+            {
+              "id": "REM-WAF-03",
+              "title": "Cloud WAF & DDoS Shield Integration",
+              "cost_inr": 130000,
+              "effectiveness": 0.7,
+              "framework": "ISO 27001 A.13"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "AST-10103",
+      "hostname": "card-payment-switch-003",
+      "ip_address": "10.1.27.192",
+      "asset_type": "Core Banking / Payment Gateway",
+      "tier": 1,
+      "is_internet_facing": true,
+      "data_classification": "PCI-DSS / Financial",
+      "hourly_downtime_cost_inr": 47454,
+      "stored_records_count": 274078,
+      "cost_per_breached_record_inr": 650,
+      "active_controls": [
+        "Central Syslog Forwarder",
+        "Active Directory Auth",
+        "Network Firewall",
+        "Daily Snapshot Backup"
+      ],
+      "applicable_frameworks": [
+        "RBI CSCRF",
+        "PCI-DSS",
+        "ISO 27001",
+        "DPDP Act"
+      ],
+      "vulnerabilities": [
+        {
+          "vuln_id": "VULN-AST-10103-1",
+          "cve_id": "CVE-2023-34362",
+          "name": "MOVEit Transfer SQLi",
+          "cvss_score": 9.8,
+          "epss_score": 0.942,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 57,
+          "remediation_options": [
+            {
+              "id": "REM-PATCH-04",
+              "title": "Automated Critical Vulnerability Patching SLA (48h)",
+              "cost_inr": 70000,
+              "effectiveness": 0.9,
+              "framework": "CIS Control 7 / NIST PR.IP"
+            },
+            {
+              "id": "REM-SEG-05",
+              "title": "Microsegmentation & Zero Trust Network Access",
+              "cost_inr": 220000,
+              "effectiveness": 0.82,
+              "framework": "NIST SP 800-207 / RBI"
+            }
+          ]
+        },
+        {
+          "vuln_id": "VULN-AST-10103-2",
+          "cve_id": "CVE-2024-3400",
+          "name": "PAN-OS GlobalProtect Command Injection",
+          "cvss_score": 10.0,
+          "epss_score": 0.95,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 11,
+          "remediation_options": [
+            {
+              "id": "REM-PATCH-04",
+              "title": "Automated Critical Vulnerability Patching SLA (48h)",
+              "cost_inr": 70000,
+              "effectiveness": 0.9,
+              "framework": "CIS Control 7 / NIST PR.IP"
+            },
+            {
+              "id": "REM-SEG-05",
+              "title": "Microsegmentation & Zero Trust Network Access",
+              "cost_inr": 220000,
+              "effectiveness": 0.82,
+              "framework": "NIST SP 800-207 / RBI"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "AST-10104",
+      "hostname": "swift-wire-gateway-004",
+      "ip_address": "10.1.233.43",
+      "asset_type": "Core Banking / Payment Gateway",
+      "tier": 1,
+      "is_internet_facing": false,
+      "data_classification": "PCI-DSS / Financial",
+      "hourly_downtime_cost_inr": 48310,
+      "stored_records_count": 282358,
+      "cost_per_breached_record_inr": 650,
+      "active_controls": [
+        "Network Firewall",
+        "Daily Snapshot Backup",
+        "Central Syslog Forwarder"
+      ],
+      "applicable_frameworks": [
+        "RBI CSCRF",
+        "PCI-DSS",
+        "ISO 27001",
+        "DPDP Act"
+      ],
+      "vulnerabilities": [
+        {
+          "vuln_id": "VULN-AST-10104-1",
+          "cve_id": "CVE-2022-1388",
+          "name": "F5 BIG-IP iControl REST Auth Bypass",
+          "cvss_score": 9.8,
+          "epss_score": 0.5,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 54,
+          "remediation_options": [
+            {
+              "id": "REM-PATCH-04",
+              "title": "Automated Critical Vulnerability Patching SLA (48h)",
+              "cost_inr": 70000,
+              "effectiveness": 0.9,
+              "framework": "CIS Control 7 / NIST PR.IP"
+            },
+            {
+              "id": "REM-SEG-05",
+              "title": "Microsegmentation & Zero Trust Network Access",
+              "cost_inr": 220000,
+              "effectiveness": 0.82,
+              "framework": "NIST SP 800-207 / RBI"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "AST-20101",
+      "hostname": "atm-network-switch-001",
+      "ip_address": "10.2.55.10",
+      "asset_type": "ATM Network Switch",
+      "tier": 2,
+      "is_internet_facing": false,
+      "data_classification": "Confidential / Internal",
+      "hourly_downtime_cost_inr": 9000,
+      "stored_records_count": 15000,
+      "cost_per_breached_record_inr": 350,
+      "active_controls": [
+        "Network Firewall",
+        "Active Directory Auth",
+        "Daily Snapshot Backup",
+        "Central Syslog Forwarder"
+      ],
+      "applicable_frameworks": [
+        "CIS Controls",
+        "NIST CSF"
+      ],
+      "vulnerabilities": [
+        {
+          "vuln_id": "VULN-AST-20101-1",
+          "cve_id": "CVE-2023-34362",
+          "name": "MOVEit Transfer SQLi",
+          "cvss_score": 9.8,
+          "epss_score": 0.942,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 76,
+          "remediation_options": [
+            {
+              "id": "REM-SEG-05",
+              "title": "Microsegmentation & Zero Trust Network Access",
+              "cost_inr": 220000,
+              "effectiveness": 0.82,
+              "framework": "NIST SP 800-207 / RBI"
+            },
+            {
+              "id": "REM-PATCH-04",
+              "title": "Automated Critical Vulnerability Patching SLA (48h)",
+              "cost_inr": 70000,
+              "effectiveness": 0.9,
+              "framework": "CIS Control 7 / NIST PR.IP"
+            }
+          ]
+        },
+        {
+          "vuln_id": "VULN-AST-20101-2",
+          "cve_id": "CVE-2020-1472",
+          "name": "Zerologon Domain Controller Takeover",
+          "cvss_score": 10.0,
+          "epss_score": 0.6,
+          "cisa_kev": true,
+          "attack_vector": "ADJACENT",
+          "patch_age_days": 159,
+          "remediation_options": [
+            {
+              "id": "REM-SEG-05",
+              "title": "Microsegmentation & Zero Trust Network Access",
+              "cost_inr": 220000,
+              "effectiveness": 0.82,
+              "framework": "NIST SP 800-207 / RBI"
+            },
+            {
+              "id": "REM-PATCH-04",
+              "title": "Automated Critical Vulnerability Patching SLA (48h)",
+              "cost_inr": 70000,
+              "effectiveness": 0.9,
+              "framework": "CIS Control 7 / NIST PR.IP"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "AST-20201",
+      "hostname": "enterprise-erp-hr-payroll-001",
+      "ip_address": "10.2.57.27",
+      "asset_type": "Enterprise ERP & HR Payroll",
+      "tier": 2,
+      "is_internet_facing": false,
+      "data_classification": "Confidential / Internal",
+      "hourly_downtime_cost_inr": 4858,
+      "stored_records_count": 4850,
+      "cost_per_breached_record_inr": 200,
+      "active_controls": [
+        "Network Firewall",
+        "Active Directory Auth"
+      ],
+      "applicable_frameworks": [
+        "CIS Controls",
+        "NIST CSF"
+      ],
+      "vulnerabilities": [
+        {
+          "vuln_id": "VULN-AST-20201-1",
+          "cve_id": "CVE-2023-27997",
+          "name": "FortiOS SSL-VPN Heap Overflow",
+          "cvss_score": 9.2,
+          "epss_score": 0.76,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 161,
+          "remediation_options": [
+            {
+              "id": "REM-MFA-01",
+              "title": "Hardware Token Enforced MFA",
+              "cost_inr": 90000,
+              "effectiveness": 0.85,
+              "framework": "NIST AC-6 / RBI Section 4"
+            },
+            {
+              "id": "REM-SEG-05",
+              "title": "Microsegmentation & Zero Trust Network Access",
+              "cost_inr": 220000,
+              "effectiveness": 0.82,
+              "framework": "NIST SP 800-207 / RBI"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "AST-20202",
+      "hostname": "enterprise-erp-hr-payroll-002",
+      "ip_address": "10.2.205.165",
+      "asset_type": "Enterprise ERP & HR Payroll",
+      "tier": 2,
+      "is_internet_facing": false,
+      "data_classification": "Confidential / Internal",
+      "hourly_downtime_cost_inr": 3694,
+      "stored_records_count": 7837,
+      "cost_per_breached_record_inr": 200,
+      "active_controls": [
+        "Daily Snapshot Backup",
+        "Antivirus Signature Agent"
+      ],
+      "applicable_frameworks": [
+        "CIS Controls",
+        "NIST CSF"
+      ],
+      "vulnerabilities": [
+        {
+          "vuln_id": "VULN-AST-20202-1",
+          "cve_id": "CVE-2022-1388",
+          "name": "F5 BIG-IP iControl REST Auth Bypass",
+          "cvss_score": 9.8,
+          "epss_score": 0.5,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 56,
+          "remediation_options": [
+            {
+              "id": "REM-SEG-05",
+              "title": "Microsegmentation & Zero Trust Network Access",
+              "cost_inr": 220000,
+              "effectiveness": 0.82,
+              "framework": "NIST SP 800-207 / RBI"
+            }
+          ]
+        },
+        {
+          "vuln_id": "VULN-AST-20202-2",
+          "cve_id": "CVE-2022-1388",
+          "name": "F5 BIG-IP iControl REST Auth Bypass",
+          "cvss_score": 9.8,
+          "epss_score": 0.5,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 167,
+          "remediation_options": [
+            {
+              "id": "REM-MFA-01",
+              "title": "Hardware Token Enforced MFA",
+              "cost_inr": 90000,
+              "effectiveness": 0.85,
+              "framework": "NIST AC-6 / RBI Section 4"
+            },
+            {
+              "id": "REM-SEG-05",
+              "title": "Microsegmentation & Zero Trust Network Access",
+              "cost_inr": 220000,
+              "effectiveness": 0.82,
+              "framework": "NIST SP 800-207 / RBI"
+            }
+          ]
+        },
+        {
+          "vuln_id": "VULN-AST-20202-3",
+          "cve_id": "CVE-2023-38606",
+          "name": "Apple Kernel Memory Manipulation",
+          "cvss_score": 7.0,
+          "epss_score": 0.085,
+          "cisa_kev": false,
+          "attack_vector": "LOCAL",
+          "patch_age_days": 107,
+          "remediation_options": [
+            {
+              "id": "REM-MFA-01",
+              "title": "Hardware Token Enforced MFA",
+              "cost_inr": 90000,
+              "effectiveness": 0.85,
+              "framework": "NIST AC-6 / RBI Section 4"
+            },
+            {
+              "id": "REM-SEG-05",
+              "title": "Microsegmentation & Zero Trust Network Access",
+              "cost_inr": 220000,
+              "effectiveness": 0.82,
+              "framework": "NIST SP 800-207 / RBI"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "AST-30201",
+      "hostname": "corporate-email-webmail-001",
+      "ip_address": "10.3.12.44",
+      "asset_type": "Corporate Email / Webmail Server",
+      "tier": 3,
+      "is_internet_facing": true,
+      "data_classification": "Internal",
+      "hourly_downtime_cost_inr": 2500,
+      "stored_records_count": 6000,
+      "cost_per_breached_record_inr": 150,
+      "active_controls": [
+        "Antivirus Signature Agent",
+        "Daily Snapshot Backup",
+        "Central Syslog Forwarder"
+      ],
+      "applicable_frameworks": [
+        "CIS Controls",
+        "NIST CSF"
+      ],
+      "vulnerabilities": [
+        {
+          "vuln_id": "VULN-AST-30201-1",
+          "cve_id": "CVE-2023-4966",
+          "name": "Citrix Bleed Session Hijack",
+          "cvss_score": 9.4,
+          "epss_score": 0.912,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 156,
+          "remediation_options": [
+            {
+              "id": "REM-WAF-03",
+              "title": "Cloud WAF & DDoS Shield Integration",
+              "cost_inr": 130000,
+              "effectiveness": 0.7,
+              "framework": "ISO 27001 A.13"
+            }
+          ]
+        },
+        {
+          "vuln_id": "VULN-AST-30201-2",
+          "cve_id": "CVE-2021-26855",
+          "name": "ProxyLogon Exchange SSRF",
+          "cvss_score": 9.8,
+          "epss_score": 0.92,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 94,
+          "remediation_options": [
+            {
+              "id": "REM-WAF-03",
+              "title": "Cloud WAF & DDoS Shield Integration",
+              "cost_inr": 130000,
+              "effectiveness": 0.7,
+              "framework": "ISO 27001 A.13"
+            },
+            {
+              "id": "REM-PATCH-04",
+              "title": "Automated Critical Vulnerability Patching SLA (48h)",
+              "cost_inr": 70000,
+              "effectiveness": 0.9,
+              "framework": "CIS Control 7 / NIST PR.IP"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "AST-40301",
+      "hostname": "public-marketing-website-001",
+      "ip_address": "10.4.8.19",
+      "asset_type": "Public Marketing Website (CMS)",
+      "tier": 4,
+      "is_internet_facing": true,
+      "data_classification": "Public",
+      "hourly_downtime_cost_inr": 500,
+      "stored_records_count": 800,
+      "cost_per_breached_record_inr": 100,
+      "active_controls": [
+        "Active Directory Auth",
+        "Daily Snapshot Backup",
+        "Antivirus Signature Agent"
+      ],
+      "applicable_frameworks": [
+        "NIST CSF",
+        "ISO 27001"
+      ],
+      "vulnerabilities": [
+        {
+          "vuln_id": "VULN-AST-40301-1",
+          "cve_id": "CVE-2024-3400",
+          "name": "PAN-OS GlobalProtect Command Injection",
+          "cvss_score": 10.0,
+          "epss_score": 0.95,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 40,
+          "remediation_options": [
+            {
+              "id": "REM-WAF-03",
+              "title": "Cloud WAF & DDoS Shield Integration",
+              "cost_inr": 130000,
+              "effectiveness": 0.7,
+              "framework": "ISO 27001 A.13"
+            }
+          ]
+        },
+        {
+          "vuln_id": "VULN-AST-40301-2",
+          "cve_id": "CVE-2023-34362",
+          "name": "MOVEit Transfer SQLi",
+          "cvss_score": 9.8,
+          "epss_score": 0.942,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 69,
+          "remediation_options": [
+            {
+              "id": "REM-WAF-03",
+              "title": "Cloud WAF & DDoS Shield Integration",
+              "cost_inr": 130000,
+              "effectiveness": 0.7,
+              "framework": "ISO 27001 A.13"
+            },
+            {
+              "id": "REM-PATCH-04",
+              "title": "Automated Critical Vulnerability Patching SLA (48h)",
+              "cost_inr": 70000,
+              "effectiveness": 0.9,
+              "framework": "CIS Control 7 / NIST PR.IP"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "AST-30001",
+      "hostname": "employee-endpoint-workstation-001",
+      "ip_address": "10.3.84.67",
+      "asset_type": "Employee Endpoint / Workstation",
+      "tier": 3,
+      "is_internet_facing": false,
+      "data_classification": "Internal",
+      "hourly_downtime_cost_inr": 857,
+      "stored_records_count": 234,
+      "cost_per_breached_record_inr": 100,
+      "active_controls": [
+        "Antivirus Signature Agent",
+        "Daily Snapshot Backup",
+        "Active Directory Auth",
+        "Central Syslog Forwarder",
+        "Network Firewall"
+      ],
+      "applicable_frameworks": [
+        "CIS Controls",
+        "NIST CSF"
+      ],
+      "vulnerabilities": [
+        {
+          "vuln_id": "VULN-AST-30001-1",
+          "cve_id": "CVE-2023-23397",
+          "name": "Outlook NTLM Credential Theft",
+          "cvss_score": 9.8,
+          "epss_score": 0.725,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 122,
+          "remediation_options": [
+            {
+              "id": "REM-PATCH-04",
+              "title": "Automated Critical Vulnerability Patching SLA (48h)",
+              "cost_inr": 70000,
+              "effectiveness": 0.9,
+              "framework": "CIS Control 7 / NIST PR.IP"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "AST-30002",
+      "hostname": "employee-endpoint-workstation-002",
+      "ip_address": "10.3.224.113",
+      "asset_type": "Employee Endpoint / Workstation",
+      "tier": 3,
+      "is_internet_facing": false,
+      "data_classification": "Internal",
+      "hourly_downtime_cost_inr": 1095,
+      "stored_records_count": 113,
+      "cost_per_breached_record_inr": 100,
+      "active_controls": [
+        "Daily Snapshot Backup",
+        "Antivirus Signature Agent"
+      ],
+      "applicable_frameworks": [
+        "CIS Controls",
+        "NIST CSF"
+      ],
+      "vulnerabilities": [
+        {
+          "vuln_id": "VULN-AST-30002-1",
+          "cve_id": "CVE-2023-4966",
+          "name": "Citrix Bleed Session Hijack",
+          "cvss_score": 9.4,
+          "epss_score": 0.912,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 41,
+          "remediation_options": [
+            {
+              "id": "REM-MFA-01",
+              "title": "Hardware Token Enforced MFA",
+              "cost_inr": 90000,
+              "effectiveness": 0.85,
+              "framework": "NIST AC-6 / RBI Section 4"
+            }
+          ]
+        },
+        {
+          "vuln_id": "VULN-AST-30002-2",
+          "cve_id": "CVE-2024-3400",
+          "name": "PAN-OS GlobalProtect Command Injection",
+          "cvss_score": 10.0,
+          "epss_score": 0.95,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 20,
+          "remediation_options": [
+            {
+              "id": "REM-PATCH-04",
+              "title": "Automated Critical Vulnerability Patching SLA (48h)",
+              "cost_inr": 70000,
+              "effectiveness": 0.9,
+              "framework": "CIS Control 7 / NIST PR.IP"
+            },
+            {
+              "id": "REM-MFA-01",
+              "title": "Hardware Token Enforced MFA",
+              "cost_inr": 90000,
+              "effectiveness": 0.85,
+              "framework": "NIST AC-6 / RBI Section 4"
+            }
+          ]
+        },
+        {
+          "vuln_id": "VULN-AST-30002-3",
+          "cve_id": "CVE-2022-1388",
+          "name": "F5 BIG-IP iControl REST Auth Bypass",
+          "cvss_score": 9.8,
+          "epss_score": 0.5,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 32,
+          "remediation_options": [
+            {
+              "id": "REM-PATCH-04",
+              "title": "Automated Critical Vulnerability Patching SLA (48h)",
+              "cost_inr": 70000,
+              "effectiveness": 0.9,
+              "framework": "CIS Control 7 / NIST PR.IP"
+            },
+            {
+              "id": "REM-EDR-02",
+              "title": "Enterprise Next-Gen EDR Deployment",
+              "cost_inr": 160000,
+              "effectiveness": 0.78,
+              "framework": "CIS Control 10 / SEBI"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "AST-30003",
+      "hostname": "employee-endpoint-workstation-003",
+      "ip_address": "10.3.71.11",
+      "asset_type": "Employee Endpoint / Workstation",
+      "tier": 3,
+      "is_internet_facing": false,
+      "data_classification": "Internal",
+      "hourly_downtime_cost_inr": 1090,
+      "stored_records_count": 70,
+      "cost_per_breached_record_inr": 100,
+      "active_controls": [
+        "Antivirus Signature Agent",
+        "Daily Snapshot Backup",
+        "Network Firewall",
+        "Central Syslog Forwarder"
+      ],
+      "applicable_frameworks": [
+        "CIS Controls",
+        "NIST CSF"
+      ],
+      "vulnerabilities": [
+        {
+          "vuln_id": "VULN-AST-30003-1",
+          "cve_id": "CVE-2022-1388",
+          "name": "F5 BIG-IP iControl REST Auth Bypass",
+          "cvss_score": 9.8,
+          "epss_score": 0.5,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 21,
+          "remediation_options": [
+            {
+              "id": "REM-PATCH-04",
+              "title": "Automated Critical Vulnerability Patching SLA (48h)",
+              "cost_inr": 70000,
+              "effectiveness": 0.9,
+              "framework": "CIS Control 7 / NIST PR.IP"
+            },
+            {
+              "id": "REM-MFA-01",
+              "title": "Hardware Token Enforced MFA",
+              "cost_inr": 90000,
+              "effectiveness": 0.85,
+              "framework": "NIST AC-6 / RBI Section 4"
+            }
+          ]
+        },
+        {
+          "vuln_id": "VULN-AST-30003-2",
+          "cve_id": "CVE-2020-1472",
+          "name": "Zerologon Domain Controller Takeover",
+          "cvss_score": 10.0,
+          "epss_score": 0.6,
+          "cisa_kev": true,
+          "attack_vector": "ADJACENT",
+          "patch_age_days": 75,
+          "remediation_options": [
+            {
+              "id": "REM-EDR-02",
+              "title": "Enterprise Next-Gen EDR Deployment",
+              "cost_inr": 160000,
+              "effectiveness": 0.78,
+              "framework": "CIS Control 10 / SEBI"
+            },
+            {
+              "id": "REM-MFA-01",
+              "title": "Hardware Token Enforced MFA",
+              "cost_inr": 90000,
+              "effectiveness": 0.85,
+              "framework": "NIST AC-6 / RBI Section 4"
+            }
+          ]
+        },
+        {
+          "vuln_id": "VULN-AST-30003-3",
+          "cve_id": "CVE-2024-3400",
+          "name": "PAN-OS GlobalProtect Command Injection",
+          "cvss_score": 10.0,
+          "epss_score": 0.95,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 68,
+          "remediation_options": [
+            {
+              "id": "REM-PATCH-04",
+              "title": "Automated Critical Vulnerability Patching SLA (48h)",
+              "cost_inr": 70000,
+              "effectiveness": 0.9,
+              "framework": "CIS Control 7 / NIST PR.IP"
+            },
+            {
+              "id": "REM-EDR-02",
+              "title": "Enterprise Next-Gen EDR Deployment",
+              "cost_inr": 160000,
+              "effectiveness": 0.78,
+              "framework": "CIS Control 10 / SEBI"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "AST-30004",
+      "hostname": "employee-endpoint-workstation-004",
+      "ip_address": "10.3.107.32",
+      "asset_type": "Employee Endpoint / Workstation",
+      "tier": 3,
+      "is_internet_facing": false,
+      "data_classification": "Internal",
+      "hourly_downtime_cost_inr": 701,
+      "stored_records_count": 246,
+      "cost_per_breached_record_inr": 100,
+      "active_controls": [
+        "Daily Snapshot Backup",
+        "Active Directory Auth"
+      ],
+      "applicable_frameworks": [
+        "CIS Controls",
+        "NIST CSF"
+      ],
+      "vulnerabilities": [
+        {
+          "vuln_id": "VULN-AST-30004-1",
+          "cve_id": "CVE-2024-3094",
+          "name": "XZ Utils Backdoor",
+          "cvss_score": 10.0,
+          "epss_score": 0.865,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 114,
+          "remediation_options": [
+            {
+              "id": "REM-PATCH-04",
+              "title": "Automated Critical Vulnerability Patching SLA (48h)",
+              "cost_inr": 70000,
+              "effectiveness": 0.9,
+              "framework": "CIS Control 7 / NIST PR.IP"
+            }
+          ]
+        },
+        {
+          "vuln_id": "VULN-AST-30004-2",
+          "cve_id": "CVE-2021-26855",
+          "name": "ProxyLogon Exchange SSRF",
+          "cvss_score": 9.8,
+          "epss_score": 0.92,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 82,
+          "remediation_options": [
+            {
+              "id": "REM-MFA-01",
+              "title": "Hardware Token Enforced MFA",
+              "cost_inr": 90000,
+              "effectiveness": 0.85,
+              "framework": "NIST AC-6 / RBI Section 4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "AST-30005",
+      "hostname": "employee-endpoint-workstation-005",
+      "ip_address": "10.3.37.65",
+      "asset_type": "Employee Endpoint / Workstation",
+      "tier": 3,
+      "is_internet_facing": false,
+      "data_classification": "Internal",
+      "hourly_downtime_cost_inr": 440,
+      "stored_records_count": 259,
+      "cost_per_breached_record_inr": 100,
+      "active_controls": [
+        "Daily Snapshot Backup",
+        "Antivirus Signature Agent",
+        "Active Directory Auth"
+      ],
+      "applicable_frameworks": [
+        "CIS Controls",
+        "NIST CSF"
+      ],
+      "vulnerabilities": [
+        {
+          "vuln_id": "VULN-AST-30005-1",
+          "cve_id": "CVE-2023-22515",
+          "name": "Atlassian Confluence Privilege Escalation",
+          "cvss_score": 9.1,
+          "epss_score": 0.7,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 129,
+          "remediation_options": [
+            {
+              "id": "REM-EDR-02",
+              "title": "Enterprise Next-Gen EDR Deployment",
+              "cost_inr": 160000,
+              "effectiveness": 0.78,
+              "framework": "CIS Control 10 / SEBI"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "AST-30006",
+      "hostname": "employee-endpoint-workstation-006",
+      "ip_address": "10.3.111.132",
+      "asset_type": "Employee Endpoint / Workstation",
+      "tier": 3,
+      "is_internet_facing": false,
+      "data_classification": "Internal",
+      "hourly_downtime_cost_inr": 713,
+      "stored_records_count": 193,
+      "cost_per_breached_record_inr": 100,
+      "active_controls": [
+        "Central Syslog Forwarder",
+        "Network Firewall",
+        "Daily Snapshot Backup",
+        "Active Directory Auth",
+        "Antivirus Signature Agent"
+      ],
+      "applicable_frameworks": [
+        "CIS Controls",
+        "NIST CSF"
+      ],
+      "vulnerabilities": [
+        {
+          "vuln_id": "VULN-AST-30006-1",
+          "cve_id": "CVE-2023-23397",
+          "name": "Outlook NTLM Credential Theft",
+          "cvss_score": 9.8,
+          "epss_score": 0.725,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 28,
+          "remediation_options": [
+            {
+              "id": "REM-EDR-02",
+              "title": "Enterprise Next-Gen EDR Deployment",
+              "cost_inr": 160000,
+              "effectiveness": 0.78,
+              "framework": "CIS Control 10 / SEBI"
+            }
+          ]
+        },
+        {
+          "vuln_id": "VULN-AST-30006-2",
+          "cve_id": "CVE-2024-3400",
+          "name": "PAN-OS GlobalProtect Command Injection",
+          "cvss_score": 10.0,
+          "epss_score": 0.95,
+          "cisa_kev": true,
+          "attack_vector": "NETWORK",
+          "patch_age_days": 122,
+          "remediation_options": [
+            {
+              "id": "REM-MFA-01",
+              "title": "Hardware Token Enforced MFA",
+              "cost_inr": 90000,
+              "effectiveness": 0.85,
+              "framework": "NIST AC-6 / RBI Section 4"
+            },
+            {
+              "id": "REM-EDR-02",
+              "title": "Enterprise Next-Gen EDR Deployment",
+              "cost_inr": 160000,
+              "effectiveness": 0.78,
+              "framework": "CIS Control 10 / SEBI"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
