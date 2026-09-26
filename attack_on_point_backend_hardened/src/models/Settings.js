@@ -12,6 +12,14 @@ const settingsSchema = new mongoose.Schema(
     last_blockchain_tx: { type: String, default: '' },
     dataset_name: { type: String, default: '' },
     dataset_version: { type: String, default: '' },
+    sector: {
+  type: String,
+  default: 'Banking & Financial Services'
+},
+profile: {
+  type: String,
+  default: 'Enterprise NeoBank'
+},
     dataset_source: { type: String, default: '' }
   },
   { timestamps: true }

@@ -11,7 +11,7 @@ function points(values, width, height, padding = 24) {
   }).join(' ');
 }
 
-export function LineChart({ data = [], valueKey = 'total_expected_annual_loss_inr', color = '#0c8275', label = 'EAL' }) {
+export function LineChart({ data = [], valueKey = 'total_expected_annual_loss_inr', color = '#00d4ff', label = 'EAL' }) {
   const values = data.map((item) => Number(item[valueKey] || 0));
   if (!values.length) return <div className="chart-empty">No trend data yet</div>;
   const width = 720;

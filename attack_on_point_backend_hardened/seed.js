@@ -63,6 +63,8 @@ const runSeed = async () => {
     }
 
     const settings = await Settings.getSettings();
+    settings.sector =rawData.metadata?.sector || 'Banking & Financial Services';
+    settings.profile =rawData.metadata?.organization || 'Enterprise NeoBank';
     settings.enterprise_budget_inr = Number(rawData.enterprise_budget_constraint_inr) || 0;
     settings.dataset_name = datasetName;
     settings.dataset_version = datasetVersion;

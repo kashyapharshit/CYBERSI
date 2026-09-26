@@ -93,10 +93,10 @@ def _bounded_reduction(selected: list[dict[str, Any]]) -> float:
 def optimize_payload(payload: dict[str, Any], options: dict[str, Any] | None = None) -> dict[str, Any]:
     options = options or payload.get("optimizer_options") or {}
     budget = int(float(options.get("budget_inr", payload.get("enterprise_budget_inr", 0)) or 0))
+    analysis = analyze_payload(payload)
     supplied_eal = {str(item.get("asset_id")): float(item.get("eal_inr", 0) or 0) for item in payload.get("assets", [])}
     if not any(supplied_eal.values()):
-        baseline = analyze_payload(payload)
-        supplied_eal = {str(item.get("asset_id")): float(item.get("eal_inr", 0) or 0) for item in baseline.get("asset_risks", [])}
+        supplied_eal = {str(item.get("asset_id")): float(item.get("eal_inr", 0) or 0) for item in analysis.get("asset_risks", [])}
     items = _items(payload, supplied_eal)
     solved = _solve_with_pulp(items, budget)
     selected_indexes, solver = solved if solved is not None else _solve_with_dp(items, budget)
@@ -104,6 +104,11 @@ def optimize_payload(payload: dict[str, Any], options: dict[str, Any] | None = N
     selected_controls = [item["control"] for item in selected_items]
     spent = sum(item["cost"] for item in selected_items)
     total_eal = sum(supplied_eal.values())
+    baseline_var = float(analysis.get("value_at_risk_inr", 0) or 0)
+    analyzed_assets = analysis.get("asset_risks", [])
+    baseline_risk_score = round(
+        sum(float(item.get("score", 0) or 0) for item in analyzed_assets) / len(analyzed_assets)
+    ) if analyzed_assets else 0
     combined_reduction = _bounded_reduction(selected_items)
     reduction_inr = total_eal * combined_reduction
     rosi_inr = reduction_inr - spent
@@ -120,6 +125,10 @@ def optimize_payload(payload: dict[str, Any], options: dict[str, Any] | None = N
         "combined_reduction_pct": round(combined_reduction * 100, 2),
         "estimated_risk_reduction_inr": round(reduction_inr),
         "estimated_residual_eal_inr": round(max(0, total_eal - reduction_inr)),
+        "baseline_var_inr": round(baseline_var),
+        "estimated_residual_var_inr": round(max(0, baseline_var * (1 - combined_reduction))),
+        "baseline_risk_score": baseline_risk_score,
+        "residual_risk_score": round(max(0, baseline_risk_score * (1 - combined_reduction))),
         "rosi_inr": round(rosi_inr),
         "rosi_pct": round(rosi_pct, 2),
         "assumptions": {
@@ -160,6 +169,11 @@ def severity_only_baseline(payload: dict[str, Any], options: dict[str, Any] | No
     selected_controls = [item["control"] for item in selected]
     possible_value = sum(item["severity_value"] for item in candidates) or 1.0
     achieved_value = sum(item["severity_value"] for item in selected)
+    baseline_var = float(analysis.get("value_at_risk_inr", 0) or 0)
+    analyzed_assets = analysis.get("asset_risks", [])
+    baseline_risk_score = round(
+        sum(float(item.get("score", 0) or 0) for item in analyzed_assets) / len(analyzed_assets)
+    ) if analyzed_assets else 0
     combined_reduction = _bounded_reduction(selected)
     estimated_risk_reduction = actual_total_eal * combined_reduction
     rosi_inr = estimated_risk_reduction - spent
@@ -176,6 +190,10 @@ def severity_only_baseline(payload: dict[str, Any], options: dict[str, Any] | No
         "combined_reduction_pct": round(combined_reduction * 100, 2),
         "estimated_risk_reduction_inr": round(estimated_risk_reduction),
         "estimated_residual_eal_inr": round(max(0, actual_total_eal - estimated_risk_reduction)),
+        "baseline_var_inr": round(baseline_var),
+        "estimated_residual_var_inr": round(max(0, baseline_var * (1 - combined_reduction))),
+        "baseline_risk_score": baseline_risk_score,
+        "residual_risk_score": round(max(0, baseline_risk_score * (1 - combined_reduction))),
         "rosi_inr": round(rosi_inr),
         "rosi_pct": round(rosi_pct, 2),
         "assumptions": {

@@ -3,9 +3,11 @@
     "organization": "Suryoday NeoBank Ltd (Synthetic)",
     "currency": "INR",
     "total_assets": 23,
-    "generated_at": "2026-09-10T12:00:00Z"
+    "generated_at": "2026-09-10T12:00:00Z",
+  "sector": "Banking & Financial Services",
+    "dataset_version": "synthetic-2026-09-10"
   },
-  "enterprise_budget_constraint_inr": 2000000,
+  "enterprise_budget_constraint_inr": 2500000,
   "available_remediations_catalog": [
     {
       "id": "REM-MFA-01",
